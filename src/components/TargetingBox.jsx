@@ -1,8 +1,25 @@
 export function TargetingBox ({ pos, setShowTargetingBox }) {
     
+    async function verifySelection(selection) {
+        console.log('Checking')
+        const res = await fetch('http://localhost:3000/', {
+            method: 'GET',
+            headers: {
+                coordinates: JSON.stringify({ "left": pos.left, "top": pos.top }),
+                selection
+            }
+        })
+        const data = await res.json()
+        console.log(data.status)
+    }
+
     return (
         <div style={{ position: 'absolute', left: `${pos.left}px`, top: `${pos.top}px`}}>
-            <select onChange={() => { setShowTargetingBox(false)}}>
+            <select defaultValue="" onChange={(e) => {
+                setShowTargetingBox(false)
+                verifySelection(e.target.value)
+                }}>
+                <option value="" disabled>Select a character</option>
                 <option>White Wizzard</option>
                 <option>Waldo</option>
                 <option>Welda</option>
