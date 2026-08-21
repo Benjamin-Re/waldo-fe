@@ -1,11 +1,10 @@
-export function TargetingBox ({ pos, setShowTargetingBox }) {
+export function TargetingBox ({ pos, setShowTargetingBox, ratio }) {
     
     async function verifySelection(selection) {
-        console.log('Checking')
         const res = await fetch('http://localhost:3000/', {
             method: 'GET',
             headers: {
-                coordinates: JSON.stringify({ "left": pos.left, "top": pos.top }),
+                coordinates: JSON.stringify({ "x": ratio.x, "y": ratio.y }),
                 selection
             }
         })
