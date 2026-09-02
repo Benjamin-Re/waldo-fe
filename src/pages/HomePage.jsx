@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { TargetingBox } from '../components/TargetingBox'
-import waldoImg from '../waldo.webp'
+// import waldoImg from '../waldo.webp'
+import kanguritoImg from '../kangurito.jpg'
 import { Pin } from '../components/Pin'
 
 export function HomePage() {
@@ -9,7 +10,7 @@ export function HomePage() {
   const [showTargetingBox, setShowTargetingBox] = useState(false)
   const [ratio, setRatio] = useState({x: 0, y:0})
   const [pins, setPins] = useState([])
-  const [characters, setCharacters] = useState(['Waldo', 'Welda', 'White Whizzard'])
+  const [characters, setCharacters] = useState(['kangurito', 'red shirt', 'super mario', 'cotton candy'])
 
   console.log("Pins:", pins);
   function handleClick (e) {
@@ -24,7 +25,7 @@ export function HomePage() {
 
   return (
     <div>
-      <img src={waldoImg} style={{ display: 'block', width: '100%'}} onClick={handleClick}></img>
+      <img src={kanguritoImg} style={{ display: 'block', width: '100%'}} onClick={handleClick}></img>
       { showTargetingBox && <TargetingBox pos={pos} ratio={ratio} setShowTargetingBox={setShowTargetingBox} setPins={setPins} characters={characters} setCharacters={setCharacters}></TargetingBox> }
       {pins.map((pin) => {
         return <Pin key={pin.id} x={pin.x} y={pin.y} />
