@@ -7,6 +7,7 @@ export function TargetingBox({
   setCharacters,
   setIsRunning,
   setSeconds,
+  game
 }) {
   async function verifySelection(selection) {
     const res = await fetch("http://localhost:3000/", {
@@ -14,6 +15,7 @@ export function TargetingBox({
       headers: {
         coordinates: JSON.stringify({ x: ratio.x, y: ratio.y }),
         selection,
+        game
       },
     });
     const data = await res.json();
