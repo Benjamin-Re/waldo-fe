@@ -1,28 +1,52 @@
 :root {
-    --font-body: 'Nunito', system-ui, sans-serif;
-    --font-display: 'Fredoka', var(--font-body)
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-display: "Fredoka", var(--font-body);
 }
 
 body {
-    font-family: var(--font-body)
+  font-family: var(--font-body);
 }
 
-h1, nav {
-    font-family: var(--font-display)
+h1,
+nav {
+  font-family: var(--font-display);
 }
 
 a {
-    text-decoration: none;
-    padding: 0.5rem;
-    color: #444;
-    
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #444;
 }
 
 a:hover {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
-button, select, option {
-    font: inherit;
-    color: inherit;
+button,
+select,
+option,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:active {
+  transform: translateY(1px);
 }

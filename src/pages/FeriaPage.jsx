@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { TargetingBox } from "../components/TargetingBox";
-// import waldoImg from '../waldo.webp'
 import kanguritoImg from "../kangurito.jpg";
 import { Pin } from "../components/Pin";
 import { StartButton } from "../components/StartButton";

@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { GameContext } from "./ContextProvider"
+
 export function TargetingBox({
   pos,
   setShowTargetingBox,
@@ -7,15 +10,18 @@ export function TargetingBox({
   setCharacters,
   setIsRunning,
   setSeconds,
-  game
+  game,
 }) {
+
+  const { username } = useContext(GameContext)
+
   async function verifySelection(selection) {
     const res = await fetch("http://localhost:3000/", {
       method: "GET",
       headers: {
         coordinates: JSON.stringify({ x: ratio.x, y: ratio.y }),
         selection,
-        game
+        game,
       },
     });
     const data = await res.json();
@@ -41,7 +47,13 @@ export function TargetingBox({
   }
 
   async function endTimer() {
-    const res = await fetch("http://localhost:3000/end", { method: "GET" });
+    const res = await fetch("http://localhost:3000/end", {
+      method: "GET",
+      headers: {
+        game,
+        username
+      },
+    });
     const data = await res.json();
     console.log(`Your time: ${data.time}`);
     setSeconds(data.time);
