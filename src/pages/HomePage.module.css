@@ -1,0 +1,17 @@
+.scoreTable td {
+    width: 10rem;
+    
+}
+.scoreTable th {
+    font-weight: 700x;
+    text-align: left;
+}
+
+.scoreTable th,td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.scoreTable tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}

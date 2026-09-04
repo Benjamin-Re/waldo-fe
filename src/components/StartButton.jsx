@@ -1,3 +1,5 @@
+import styles from './StartButton.module.css'
+
 export function StartButton({ isRunning, setIsRunning }) {
   function handleClick() {
     console.log("Clicked Start");
@@ -6,5 +8,5 @@ export function StartButton({ isRunning, setIsRunning }) {
         method: "GET"
     })
   }
-  return <button onClick={handleClick}>Start</button>;
+  return <button className={styles.btn} onClick={handleClick}>Start</button>;
 }
