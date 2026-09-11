@@ -55,7 +55,7 @@ export function HomePage() {
               <tr key={highscore.time}>
                 <td>{highscore.game}</td>
                 <td>{highscore.time}</td>
-                <td>{highscore.user}</td>
+                <td>{highscore.username}</td>
               </tr>
             )
           })}
