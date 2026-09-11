@@ -16,7 +16,7 @@ export function TargetingBox({
   const { username } = useContext(GameContext)
 
   async function verifySelection(selection) {
-    const res = await fetch("http://localhost:3000/", {
+    const res = await fetch("https://waldo-be.vercel.app/hit", {
       method: "GET",
       headers: {
         coordinates: JSON.stringify({ x: ratio.x, y: ratio.y }),
@@ -47,7 +47,7 @@ export function TargetingBox({
   }
 
   async function endTimer() {
-    const res = await fetch("http://localhost:3000/end", {
+    const res = await fetch("https://waldo-be.vercel.app/end", {
       method: "GET",
       headers: {
         game,

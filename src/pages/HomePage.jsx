@@ -12,7 +12,7 @@ export function HomePage() {
   }, [])
 
   async function fetchHighscores () {
-    const res = await fetch('http://localhost:3000/highscores')
+    const res = await fetch('https://waldo-be.vercel.app/highscores')
     const data = await res.json()
     console.log(data)
     setHighscores(data)

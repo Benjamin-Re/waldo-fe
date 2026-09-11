@@ -2,7 +2,7 @@ export function StartButton({ isRunning, setIsRunning }) {
   function handleClick() {
     console.log("Clicked Start");
     setIsRunning(true);
-    fetch("http://localhost:3000/start", {
+    fetch("https://waldo-be.vercel.app/start", {
         method: "GET"
     })
   }
