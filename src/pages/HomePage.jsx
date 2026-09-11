@@ -52,7 +52,7 @@ export function HomePage() {
         <tbody>
           { highscores.map(highscore => {
             return (
-              <tr>
+              <tr key={highscore.time}>
                 <td>{highscore.game}</td>
                 <td>{highscore.time}</td>
                 <td>{highscore.user}</td>

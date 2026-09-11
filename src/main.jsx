@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './pages/HomePage'
-import { FeriaPage } from './pages/FeriaPage'
-import { CarpetPage } from './pages/CarpetPage'
+
 import { Layout } from './components/Layout'
+import { GamePage } from './pages/GamePage'
 
 const router = createBrowserRouter([
 	{
@@ -15,14 +15,14 @@ const router = createBrowserRouter([
 			{
 				path: '/',
 				element: <HomePage />
-			},
+			}, 
 			{
 				path: '/feria',
-				element: <FeriaPage />
+				element: <GamePage game='feria' key='feria'/>
 			},
 			{
 				path: '/carpet',
-				element: <CarpetPage />
+				element: <GamePage game='carpet' key='carpet'/>,
 			}
 		]
 	}
